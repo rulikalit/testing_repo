@@ -2,8 +2,17 @@ pipeline {
   agent any
   stages {
     stage('build') {
-      steps {
-        sh 'docker build -t test .'
+      parallel {
+        stage('build') {
+          steps {
+            sh 'echo "halo"'
+          }
+        }
+        stage('test') {
+          steps {
+            sh 'echo "hallo"'
+          }
+        }
       }
     }
   }
