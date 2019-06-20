@@ -15,5 +15,38 @@ pipeline {
         }
       }
     }
+    stage('testt') {
+      parallel {
+        stage('testt') {
+          steps {
+            echo 'helo'
+          }
+        }
+        stage('hello') {
+          steps {
+            echo 'hell'
+          }
+        }
+      }
+    }
+    stage('sd') {
+      parallel {
+        stage('sd') {
+          steps {
+            echo 'diterima'
+          }
+        }
+        stage('sda') {
+          steps {
+            echo 'ditolak'
+          }
+        }
+      }
+    }
+    stage('finish') {
+      steps {
+        echo 'selesai'
+      }
+    }
   }
 }
