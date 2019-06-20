@@ -1,51 +1,22 @@
 pipeline {
   agent any
   stages {
-    stage('build') {
+    stage('Checkout branch') {
       parallel {
-        stage('build') {
+        stage('Checkout branch') {
           steps {
-            sh 'echo "halo"'
+            echo 'Checkout branch'
           }
         }
-        stage('test') {
+        stage('Prepare ENV') {
+          environment {
+            asdas = 'asdasd'
+            asdasd = 'asdasdasdas'
+          }
           steps {
-            sh 'echo "hallo"'
+            echo 'being set'
           }
         }
-      }
-    }
-    stage('testt') {
-      parallel {
-        stage('testt') {
-          steps {
-            echo 'helo'
-          }
-        }
-        stage('hello') {
-          steps {
-            echo 'hell'
-          }
-        }
-      }
-    }
-    stage('sd') {
-      parallel {
-        stage('sd') {
-          steps {
-            echo 'diterima'
-          }
-        }
-        stage('sda') {
-          steps {
-            echo 'ditolak'
-          }
-        }
-      }
-    }
-    stage('finish') {
-      steps {
-        echo 'selesai'
       }
     }
   }
